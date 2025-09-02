@@ -4,20 +4,8 @@ import { knex } from "./database";
 const app = fastify();
 
 app.get("/", async () => {
-  await knex.schema.createTable("users", (table) => {
-    table.uuid("id").primary();
-    table.text("name").notNullable();
-    table.text("email").notNullable();
-  });
-
-  await knex.table("users").insert({
-    id: crypto.randomUUID(),
-    name: "John Doe",
-    email: "john.doe@example.com",
-  });
-
-  const users = await knex("users").select("*");
-  return users;
+  const transactions = await knex("transactions").select("*");
+  return transactions;
 });
 
 app.listen({ port: 3000 }).then(() => {
