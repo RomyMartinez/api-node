@@ -34,7 +34,14 @@ export async function transactionsRoutes(app: FastifyInstance) {
     return reply.status(201).send();
   });
   app.get("/", async (request, reply) => {
-    const transactions = await knex("transactions").select("*");
+    const sessionId = request.cookies.sessionId;
+    if (!sessionId) {
+      return reply.status(401).send({ error: "Unauthorized" });
+    }
+
+    const transactions = await knex("transactions")
+      .where("session_id", sessionId)
+      .select("*");
     return { transactions };
   });
 
