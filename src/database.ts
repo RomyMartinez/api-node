@@ -1,4 +1,4 @@
-import setupKnew, { Knex } from "knex";
+import setupKnex, { Knex } from "knex";
 import { env } from "./env";
 
 export const config: Knex.Config = {
@@ -13,6 +13,6 @@ export const config: Knex.Config = {
   },
 };
 
-export const knex = setupKnew({
+export const knex = setupKnex({
   ...config,
 });
