@@ -115,12 +115,12 @@ Este projeto faz parte do curso de Node.js e implementa os seguintes tópicos:
 - [x] **Estrutura da aplicação** - Organização modular e escalável
 - [x] **Banco de Dados** - SQLite com Knex.js e migrations
 - [x] **Implementando as Rotas** - API REST completa com validação
-- [ ] **Testes Automatizados** - Jest e supertest (próximo passo)
+- [x] **Testes Automatizados** - Vitest e supertest implementados
 - [ ] **Preparando para Deploy** - Configuração de produção
 
 ### **Progresso do Curso**
 
-![Progresso do Módulo](https://img.shields.io/badge/Progresso%20do%20Módulo-60%25-yellow)
+![Progresso do Módulo](https://img.shields.io/badge/Progresso%20do%20Módulo-80%25-brightgreen)
 
 ## 🚀 Como Executar
 
@@ -151,6 +151,9 @@ npm run dev
 
 # Executar migrações
 npm run knex -- migrate:latest
+
+# Executar testes
+npm test
 
 # Linting
 npm run lint
@@ -201,6 +204,72 @@ O projeto implementa um sistema simples de sessões usando cookies:
 - **Isolamento**: Cada sessão vê apenas suas próprias transações
 - **Persistência**: Cookies duram 7 dias
 - **Segurança**: Middleware valida sessão em rotas protegidas
+
+## 🧪 Testes Automatizados
+
+O projeto agora inclui testes automatizados usando **Vitest** e **Supertest**:
+
+### **Ferramentas de Teste**
+
+#### **Vitest** (`vitest@^3.2.4`)
+
+- **O que é**: Framework de testes moderno e rápido
+- **Por que usar**: Compatível com Jest, mais rápido, suporte nativo a TypeScript
+- **Conceito básico**: Framework de testes é uma ferramenta que automatiza a verificação se o código funciona corretamente
+
+#### **Supertest** (`supertest@^7.1.4`)
+
+- **O que é**: Biblioteca para testar APIs HTTP
+- **Por que usar**: Facilita testes de endpoints, simula requisições HTTP
+- **Conceito básico**: Teste de integração verifica se diferentes partes do sistema funcionam juntas
+
+### **Estrutura de Testes**
+
+```
+test/
+└── example.spec.ts    # Testes de exemplo das rotas
+```
+
+### **Executando Testes**
+
+```bash
+# Executar todos os testes
+npm test
+
+# Executar testes em modo watch
+npm test -- --watch
+
+# Executar testes com coverage
+npm test -- --coverage
+```
+
+### **Exemplo de Teste**
+
+```typescript
+import { expect, it, beforeAll, afterAll, describe } from "vitest";
+import request from "supertest";
+import { app } from "../src/app";
+
+describe("Transactions routes", () => {
+  beforeAll(async () => {
+    await app.ready();
+  });
+
+  afterAll(async () => {
+    await app.close();
+  });
+
+  it("user should be able to create a new transaction", async () => {
+    const response = await request(app.server).post("/transactions").send({
+      title: "New Transaction",
+      amount: 100,
+      type: "credit",
+    });
+
+    expect(response.status).toBe(201);
+  });
+});
+```
 
 ## 🗄️ Banco de Dados
 
@@ -267,7 +336,8 @@ npm run knex -- migrate:rollback
 {
   "dev": "tsx watch src/server.ts", // Desenvolvimento com hot reload
   "lint": "eslint src --ext .ts --fix", // Linting e correção automática
-  "knex": "node --import tsx ./node_modules/.bin/knex" // Comandos do Knex
+  "knex": "node --import tsx ./node_modules/.bin/knex", // Comandos do Knex
+  "test": "vitest" // Executar testes automatizados
 }
 ```
 
@@ -319,6 +389,7 @@ Este projeto serviu para praticar e consolidar conhecimentos em:
 - ✅ **REST API**: Arquitetura de APIs
 - ✅ **Middleware**: Processamento de requisições
 - ✅ **Migrations**: Controle de versão do banco
+- ✅ **Testes Automatizados**: Vitest e Supertest para testes de integração
 
 ## 🤝 Contribuição
 
