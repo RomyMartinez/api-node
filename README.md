@@ -1,6 +1,18 @@
 # 🚀 API Node.js - Projeto de Estudo e Prática
 
+[![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)](https://nodejs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9.2-blue.svg)](https://www.typescriptlang.org/)
+[![Fastify](https://img.shields.io/badge/Fastify-5.5.0-orange.svg)](https://fastify.io/)
+[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
+
 Este é um projeto de estudo e prática de Node.js, onde explorei e implementei uma API REST completa usando diversas bibliotecas modernas. O projeto serve como um laboratório para testar e aprender conceitos fundamentais de desenvolvimento backend.
+
+## 📊 Status do Projeto
+
+![Progresso](https://img.shields.io/badge/Progresso-80%25-brightgreen)
+![Última Atualização](https://img.shields.io/badge/Última%20Atualização-Dezembro%202024-blue)
+
+**Status**: ✅ Funcional e em desenvolvimento ativo
 
 ## 📋 Sobre o Projeto
 
@@ -94,6 +106,21 @@ api-node/
 └── package.json          # Dependências e scripts
 ```
 
+## 📚 Módulo: Criando API REST com Node.js
+
+Este projeto faz parte do curso de Node.js e implementa os seguintes tópicos:
+
+### **Checklist do Módulo**
+
+- [x] **Estrutura da aplicação** - Organização modular e escalável
+- [x] **Banco de Dados** - SQLite com Knex.js e migrations
+- [x] **Implementando as Rotas** - API REST completa com validação
+- [ ] **Testes Automatizados** - Jest e supertest (próximo passo)
+- [ ] **Preparando para Deploy** - Configuração de produção
+
+### **Progresso do Curso**
+![Progresso do Módulo](https://img.shields.io/badge/Progresso%20do%20Módulo-60%25-yellow)
+
 ## 🚀 Como Executar
 
 ### **Pré-requisitos**
@@ -132,12 +159,12 @@ npm run lint
 
 ### **Transações**
 
-| Método | Endpoint                | Descrição                   |
-| ------ | ----------------------- | --------------------------- |
-| `POST` | `/transactions`         | Criar nova transação        |
-| `GET`  | `/transactions`         | Listar transações da sessão |
-| `GET`  | `/transactions/:id`     | Buscar transação específica |
-| `GET`  | `/transactions/summary` | Obter resumo financeiro     |
+| Método | Endpoint                | Descrição                   | Status |
+| ------ | ----------------------- | --------------------------- | ------ |
+| `POST` | `/transactions`         | Criar nova transação        | ✅     |
+| `GET`  | `/transactions`         | Listar transações da sessão | ✅     |
+| `GET`  | `/transactions/:id`     | Buscar transação específica | ✅     |
+| `GET`  | `/transactions/summary` | Obter resumo financeiro     | ✅     |
 
 ### **Exemplos de Uso**
 
@@ -241,6 +268,36 @@ npm run knex -- migrate:rollback
   "lint": "eslint src --ext .ts --fix", // Linting e correção automática
   "knex": "node --import tsx ./node_modules/.bin/knex" // Comandos do Knex
 }
+```
+
+## 🚨 Troubleshooting
+
+### **Problemas Comuns**
+
+#### **Erro: "tsx must be loaded with --import instead of --loader"**
+```bash
+# Solução: Atualizar script no package.json
+"knex": "node --import tsx ./node_modules/.bin/knex"
+```
+
+#### **Erro: "table transactions already exists"**
+```bash
+# Solução: Verificar e executar migrações
+npm run knex -- migrate:status
+npm run knex -- migrate:latest
+```
+
+#### **Erro: "Unauthorized" nas rotas GET**
+```bash
+# Solução: Verificar cookies de sessão
+# Faça uma requisição POST primeiro para criar sessão
+```
+
+#### **Problemas com TypeScript**
+```bash
+# Solução: Verificar configuração
+npm run lint
+npx tsc --noEmit
 ```
 
 ## 📚 Aprendizados
