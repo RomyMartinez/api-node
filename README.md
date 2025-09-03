@@ -12,18 +12,18 @@ Este é um projeto de estudo e prática de Node.js, onde explorei e implementei 
 ![Progresso](https://img.shields.io/badge/Progresso-80%25-brightgreen)
 ![Última Atualização](https://img.shields.io/badge/Última%20Atualização-Dezembro%202024-blue)
 
-**Status**: ✅ Funcional e em desenvolvimento ativo
+**Status**: :white_check_mark: Funcional e em desenvolvimento ativo
 
 ## 📋 Sobre o Projeto
 
 Uma API REST para gerenciamento de transações financeiras com:
 
-- ✅ Autenticação por sessão
-- ✅ Isolamento de dados por usuário
-- ✅ Validação de dados
-- ✅ Banco de dados SQLite
-- ✅ TypeScript
-- ✅ Estrutura modular
+- :white_check_mark: Autenticação por sessão
+- :white_check_mark: Isolamento de dados por usuário
+- :white_check_mark: Validação de dados
+- :white_check_mark: Banco de dados SQLite
+- :white_check_mark: TypeScript
+- :white_check_mark: Estrutura modular
 
 ## 🛠️ Tecnologias e Bibliotecas
 
@@ -162,10 +162,10 @@ npm run lint
 
 | Método | Endpoint                | Descrição                   | Status |
 | ------ | ----------------------- | --------------------------- | ------ |
-| `POST` | `/transactions`         | Criar nova transação        | ✅     |
-| `GET`  | `/transactions`         | Listar transações da sessão | ✅     |
-| `GET`  | `/transactions/:id`     | Buscar transação específica | ✅     |
-| `GET`  | `/transactions/summary` | Obter resumo financeiro     | ✅     |
+| `POST` | `/transactions`         | Criar nova transação        | :white_check_mark:     |
+| `GET`  | `/transactions`         | Listar transações da sessão | :white_check_mark:     |
+| `GET`  | `/transactions/:id`     | Buscar transação específica | :white_check_mark:     |
+| `GET`  | `/transactions/summary` | Obter resumo financeiro     | :white_check_mark:     |
 
 ### **Exemplos de Uso**
 
@@ -309,16 +309,16 @@ npx tsc --noEmit
 
 Este projeto serviu para praticar e consolidar conhecimentos em:
 
-- ✅ **Node.js**: Runtime JavaScript server-side
-- ✅ **TypeScript**: Tipagem estática e melhor DX
-- ✅ **Fastify**: Framework web moderno e performático
-- ✅ **Knex.js**: Query builder e migrations
-- ✅ **SQLite**: Banco de dados relacional
-- ✅ **Zod**: Validação de dados
-- ✅ **Cookies**: Gerenciamento de sessão
-- ✅ **REST API**: Arquitetura de APIs
-- ✅ **Middleware**: Processamento de requisições
-- ✅ **Migrations**: Controle de versão do banco
+- :white_check_mark: **Node.js**: Runtime JavaScript server-side
+- :white_check_mark: **TypeScript**: Tipagem estática e melhor DX
+- :white_check_mark: **Fastify**: Framework web moderno e performático
+- :white_check_mark: **Knex.js**: Query builder e migrations
+- :white_check_mark: **SQLite**: Banco de dados relacional
+- :white_check_mark: **Zod**: Validação de dados
+- :white_check_mark: **Cookies**: Gerenciamento de sessão
+- :white_check_mark: **REST API**: Arquitetura de APIs
+- :white_check_mark: **Middleware**: Processamento de requisições
+- :white_check_mark: **Migrations**: Controle de versão do banco
 
 ## 🤝 Contribuição
 
@@ -335,11 +335,11 @@ Este projeto está sob a licença **ISC** (Internet Systems Consortium License).
 
 ### **O que a licença ISC permite:**
 
-- ✅ **Usar** o software para qualquer propósito
-- ✅ **Copiar** e distribuir o código
-- ✅ **Modificar** e criar versões derivadas
-- ✅ **Usar comercialmente** sem restrições
-- ✅ **Incorporar** em outros projetos
+- :white_check_mark: **Usar** o software para qualquer propósito
+- :white_check_mark: **Copiar** e distribuir o código
+- :white_check_mark: **Modificar** e criar versões derivadas
+- :white_check_mark: **Usar comercialmente** sem restrições
+- :white_check_mark: **Incorporar** em outros projetos
 
 ### **O que a licença ISC requer:**
 
