@@ -160,12 +160,12 @@ npm run lint
 
 ### **Transações**
 
-| Método | Endpoint                | Descrição                   | Status |
-| ------ | ----------------------- | --------------------------- | ------ |
-| `POST` | `/transactions`         | Criar nova transação        | :white_check_mark:     |
-| `GET`  | `/transactions`         | Listar transações da sessão | :white_check_mark:     |
-| `GET`  | `/transactions/:id`     | Buscar transação específica | :white_check_mark:     |
-| `GET`  | `/transactions/summary` | Obter resumo financeiro     | :white_check_mark:     |
+| Método | Endpoint                | Descrição                   | Status             |
+| ------ | ----------------------- | --------------------------- | ------------------ |
+| `POST` | `/transactions`         | Criar nova transação        | :white_check_mark: |
+| `GET`  | `/transactions`         | Listar transações da sessão | :white_check_mark: |
+| `GET`  | `/transactions/:id`     | Buscar transação específica | :white_check_mark: |
+| `GET`  | `/transactions/summary` | Obter resumo financeiro     | :white_check_mark: |
 
 ### **Exemplos de Uso**
 
