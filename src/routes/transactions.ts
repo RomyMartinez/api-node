@@ -69,7 +69,7 @@ export async function transactionsRoutes(app: FastifyInstance) {
       const sessionId = request.cookies.sessionId;
       const summary = await knex("transactions")
         .where("session_id", sessionId)
-        .sum("amount")
+        .sum("amount", { as: "amount" })
         .first();
       return { summary };
     }
