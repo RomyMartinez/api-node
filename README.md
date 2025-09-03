@@ -5,6 +5,7 @@ Este é um projeto de estudo e prática de Node.js, onde explorei e implementei 
 ## 📋 Sobre o Projeto
 
 Uma API REST para gerenciamento de transações financeiras com:
+
 - ✅ Autenticação por sessão
 - ✅ Isolamento de dados por usuário
 - ✅ Validação de dados
@@ -17,31 +18,37 @@ Uma API REST para gerenciamento de transações financeiras com:
 ### **Core Dependencies**
 
 #### **Fastify** (`fastify@^5.5.0`)
+
 - **O que é**: Framework web rápido e eficiente para Node.js
 - **Por que usar**: Performance superior ao Express, validação nativa, serialização automática
 - **Conceito básico**: Framework web é uma estrutura que facilita a criação de servidores HTTP, fornecendo métodos para lidar com rotas, middlewares e requisições/respostas
 
 #### **Knex.js** (`knex@^3.1.0`)
+
 - **O que é**: Query builder SQL para Node.js
 - **Por que usar**: Permite escrever queries SQL de forma mais segura e legível, com suporte a migrations
 - **Conceito básico**: Query builder é uma ferramenta que permite construir consultas SQL usando métodos JavaScript, evitando SQL injection e tornando o código mais manutenível
 
 #### **SQLite3** (`sqlite3@^5.1.7`)
+
 - **O que é**: Banco de dados relacional leve e embutido
 - **Por que usar**: Não requer servidor separado, arquivo único, perfeito para desenvolvimento e projetos pequenos
 - **Conceito básico**: Banco de dados é um sistema que armazena e gerencia dados de forma estruturada, permitindo consultas e relacionamentos entre informações
 
 #### **Zod** (`zod@^4.1.5`)
+
 - **O que é**: Biblioteca de validação de esquemas TypeScript-first
 - **Por que usar**: Validação em runtime com inferência de tipos, excelente para APIs
 - **Conceito básico**: Validação é o processo de verificar se os dados recebidos estão no formato esperado, garantindo integridade e segurança
 
 #### **@fastify/cookie** (`@fastify/cookie@^11.0.2`)
+
 - **O que é**: Plugin do Fastify para gerenciar cookies
 - **Por que usar**: Facilita o trabalho com cookies de forma segura e eficiente
 - **Conceito básico**: Cookies são pequenos arquivos de texto armazenados no navegador, usados para manter estado entre requisições
 
 #### **dotenv** (`dotenv@^17.2.1`)
+
 - **O que é**: Carregador de variáveis de ambiente de arquivos .env
 - **Por que usar**: Separa configurações sensíveis do código, seguindo boas práticas de segurança
 - **Conceito básico**: Variáveis de ambiente são configurações que podem mudar entre diferentes ambientes (desenvolvimento, produção, etc.)
@@ -49,16 +56,19 @@ Uma API REST para gerenciamento de transações financeiras com:
 ### **Dev Dependencies**
 
 #### **TypeScript** (`typescript@^5.9.2`)
+
 - **O que é**: Superset do JavaScript que adiciona tipagem estática
 - **Por que usar**: Detecta erros em tempo de compilação, melhor autocomplete, código mais seguro
 - **Conceito básico**: Tipagem estática é quando o tipo de uma variável é definido no código e verificado durante a compilação
 
 #### **TSX** (`tsx@^4.20.4`)
+
 - **O que é**: Executor TypeScript para Node.js
 - **Por que usar**: Permite executar arquivos TypeScript diretamente sem compilação prévia
 - **Conceito básico**: Executor é uma ferramenta que interpreta e executa código em tempo real
 
 #### **ESLint** (`eslint@^8.57.1`)
+
 - **O que é**: Ferramenta de análise estática de código
 - **Por que usar**: Encontra e corrige problemas de qualidade de código automaticamente
 - **Conceito básico**: Análise estática é a verificação de código sem executá-lo, identificando possíveis problemas
@@ -87,10 +97,12 @@ api-node/
 ## 🚀 Como Executar
 
 ### **Pré-requisitos**
-- Node.js 18+ 
+
+- Node.js 18+
 - npm ou yarn
 
 ### **Instalação**
+
 ```bash
 # Clone o repositório
 git clone <url-do-repositorio>
@@ -104,6 +116,7 @@ cp .env.example .env
 ```
 
 ### **Execução**
+
 ```bash
 # Desenvolvimento (com hot reload)
 npm run dev
@@ -119,16 +132,17 @@ npm run lint
 
 ### **Transações**
 
-| Método | Endpoint | Descrição |
-|--------|----------|-----------|
-| `POST` | `/transactions` | Criar nova transação |
-| `GET` | `/transactions` | Listar transações da sessão |
-| `GET` | `/transactions/:id` | Buscar transação específica |
-| `GET` | `/transactions/summary` | Obter resumo financeiro |
+| Método | Endpoint                | Descrição                   |
+| ------ | ----------------------- | --------------------------- |
+| `POST` | `/transactions`         | Criar nova transação        |
+| `GET`  | `/transactions`         | Listar transações da sessão |
+| `GET`  | `/transactions/:id`     | Buscar transação específica |
+| `GET`  | `/transactions/summary` | Obter resumo financeiro     |
 
 ### **Exemplos de Uso**
 
 #### **Criar Transação**
+
 ```bash
 curl -X POST http://localhost:3000/transactions \
   -H "Content-Type: application/json" \
@@ -140,11 +154,13 @@ curl -X POST http://localhost:3000/transactions \
 ```
 
 #### **Listar Transações**
+
 ```bash
 curl http://localhost:3000/transactions
 ```
 
 #### **Obter Resumo**
+
 ```bash
 curl http://localhost:3000/transactions/summary
 ```
@@ -161,6 +177,7 @@ O projeto implementa um sistema simples de sessões usando cookies:
 ## 🗄️ Banco de Dados
 
 ### **Tabela: transactions**
+
 ```sql
 CREATE TABLE transactions (
   id CHAR(36) PRIMARY KEY,
@@ -172,6 +189,7 @@ CREATE TABLE transactions (
 ```
 
 ### **Migrações**
+
 ```bash
 # Criar nova migração
 npm run knex -- make:migration nome_da_migracao
@@ -186,26 +204,31 @@ npm run knex -- migrate:rollback
 ## 🧪 Conceitos Implementados
 
 ### **1. REST API**
+
 - **O que é**: Arquitetura para APIs web
 - **Implementação**: Endpoints seguindo padrões REST
 - **Benefícios**: Padronização, escalabilidade, facilidade de uso
 
 ### **2. Middleware**
+
 - **O que é**: Função que processa requisições antes de chegar na rota
 - **Implementação**: Validação de sessão
 - **Benefícios**: Reutilização de código, separação de responsabilidades
 
 ### **3. Validação de Dados**
+
 - **O que é**: Verificação de formato e tipos de dados
 - **Implementação**: Zod schemas
 - **Benefícios**: Segurança, integridade de dados
 
 ### **4. Migrations**
+
 - **O que é**: Controle de versão para estrutura do banco
 - **Implementação**: Knex migrations
 - **Benefícios**: Histórico de mudanças, rollback seguro
 
 ### **5. TypeScript**
+
 - **O que é**: JavaScript com tipagem estática
 - **Implementação**: Tipos para todas as entidades
 - **Benefícios**: Menos bugs, melhor DX
@@ -214,7 +237,7 @@ npm run knex -- migrate:rollback
 
 ```json
 {
-  "dev": "tsx watch src/server.ts",     // Desenvolvimento com hot reload
+  "dev": "tsx watch src/server.ts", // Desenvolvimento com hot reload
   "lint": "eslint src --ext .ts --fix", // Linting e correção automática
   "knex": "node --import tsx ./node_modules/.bin/knex" // Comandos do Knex
 }
@@ -246,7 +269,30 @@ Este é um projeto de estudo, mas sugestões e melhorias são bem-vindas! Sinta-
 
 ## 📄 Licença
 
-Este projeto está sob a licença ISC. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+Este projeto está sob a licença **ISC** (Internet Systems Consortium License).
+
+### **O que a licença ISC permite:**
+
+- ✅ **Usar** o software para qualquer propósito
+- ✅ **Copiar** e distribuir o código
+- ✅ **Modificar** e criar versões derivadas
+- ✅ **Usar comercialmente** sem restrições
+- ✅ **Incorporar** em outros projetos
+
+### **O que a licença ISC requer:**
+
+- 📋 Manter o aviso de copyright
+- 📋 Incluir o aviso de permissão
+- ⚠️ O software é fornecido "como está" sem garantias
+
+### **Por que ISC?**
+
+A licença ISC é uma licença permissiva e simples, muito popular no ecossistema Node.js. Ela é:
+- **Compatível** com GPL e outras licenças
+- **Simples** de entender e implementar
+- **Padrão** para projetos JavaScript/Node.js
+
+Veja o arquivo [LICENSE](LICENSE) para o texto completo da licença.
 
 ---
 
