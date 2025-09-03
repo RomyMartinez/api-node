@@ -119,6 +119,7 @@ Este projeto faz parte do curso de Node.js e implementa os seguintes tópicos:
 - [ ] **Preparando para Deploy** - Configuração de produção
 
 ### **Progresso do Curso**
+
 ![Progresso do Módulo](https://img.shields.io/badge/Progresso%20do%20Módulo-60%25-yellow)
 
 ## 🚀 Como Executar
@@ -275,12 +276,14 @@ npm run knex -- migrate:rollback
 ### **Problemas Comuns**
 
 #### **Erro: "tsx must be loaded with --import instead of --loader"**
+
 ```bash
 # Solução: Atualizar script no package.json
 "knex": "node --import tsx ./node_modules/.bin/knex"
 ```
 
 #### **Erro: "table transactions already exists"**
+
 ```bash
 # Solução: Verificar e executar migrações
 npm run knex -- migrate:status
@@ -288,12 +291,14 @@ npm run knex -- migrate:latest
 ```
 
 #### **Erro: "Unauthorized" nas rotas GET**
+
 ```bash
 # Solução: Verificar cookies de sessão
 # Faça uma requisição POST primeiro para criar sessão
 ```
 
 #### **Problemas com TypeScript**
+
 ```bash
 # Solução: Verificar configuração
 npm run lint
