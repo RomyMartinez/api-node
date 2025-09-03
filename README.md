@@ -288,6 +288,7 @@ Este projeto está sob a licença **ISC** (Internet Systems Consortium License).
 ### **Por que ISC?**
 
 A licença ISC é uma licença permissiva e simples, muito popular no ecossistema Node.js. Ela é:
+
 - **Compatível** com GPL e outras licenças
 - **Simples** de entender e implementar
 - **Padrão** para projetos JavaScript/Node.js
